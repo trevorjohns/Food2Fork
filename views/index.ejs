@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-       <style>
-       .text {
-            text-align: center;
-           max-width: 400px;
-       }
-       .img {
-            vertical-align: text-bottom;
-            width: 400px;
-            height: auto;
-       }
-       </style>
-  <title>
-  Food2Fork Engine
-  </title>
+    <style>
+    .text {
+      text-align: center;
+      max-width: 400px;
+    }
+    .img {
+      vertical-align: text-bottom;
+      width: 400px;
+      height: auto;
+    }
+    </style>
+    <title>
+      Food2Fork Engine
+    </title>
   </head>
   <body>
     <fieldset>
@@ -28,22 +28,22 @@
           <% for (recipe of page) { %>
             <% if(counter % 3 == 0) { %>
               <tr>
-               <% } %>
-            <td style = "vertical-align:10%">
-              <p class = "text">
-                <%= recipe.title %>
-              </p>
-              <a href = "<%= recipe.f2f_url %>">
-                <img src = "<%= recipe.image_url %>" class = "img" >
-              </a>
-            </td>
-            <% if(counter++ % 3 == 2) { %>
-              </tr>
+                <% } %>
+                <td style = "vertical-align:10%">
+                  <p class = "text">
+                    <%= recipe.title %>
+                  </p>
+                  <a href = "<%= recipe.f2f_url %>" target = "_blank">
+                    <img src = "<%= recipe.image_url %>" class = "img" >
+                  </a>
+                </td>
+                <% if(counter++ % 3 == 2) { %>
+                  </tr>
+                <% } %>
             <% } %>
-          <% } %>
         </table>
       <% } %>
-      <% if(error !== null) %>
+    <% if(error !== null) %>
       <p>
         <%= error %>
       </p>

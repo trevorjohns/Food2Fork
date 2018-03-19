@@ -19,6 +19,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
+var temp;
+
+// directory of URLS
+const directory = ["/", "/recipes", "/recipes.html", "/index.html"];
+
 // handle post requests
 app.post('/',  (postRequest, postResponse) => {
   // get the ingredient from the request
@@ -42,11 +47,14 @@ app.post('/',  (postRequest, postResponse) => {
   });
 });
 
-// handle get requests
-app.get('/', (request, response) => {
+// loop through all possible urls
+for(url of directory) {
+  // handle get request
+  app.get(url, (request, response) => {
   // upon loading, send blank object
   response.render('index', {page: null, error: null});
-});
+  });
+}
 
 // open server
 app.listen(3000, () => {
