@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <style>
+       .text {
+            text-align: center;
+           max-width: 400px;
+       }
+       .img {
+            vertical-align: text-bottom;
+            width: 400px;
+            height: auto;
+       }
+       </style>
+  <title>
+  Food2Fork Engine
+  </title>
+  </head>
+  <body>
+    <fieldset>
+      <form action = "/" method = "post">
+        <input name = "ingredient" type = "text" placeholder = "Enter Ingredient(s)" required>
+        <input type = "submit" class = "button" value = "Submit">
+      </form>
+      <% if(page !== null) { %>
+        <table style = "width:1300px">
+          <% var counter = 0 %>
+          <% for (recipe of page) { %>
+            <% if(counter % 3 == 0) { %>
+              <tr>
+               <% } %>
+            <td style = "vertical-align:10%">
+              <p class = "text">
+                <%= recipe.title %>
+              </p>
+              <a href = "<%= recipe.f2f_url %>">
+                <img src = "<%= recipe.image_url %>" class = "img" >
+              </a>
+            </td>
+            <% if(counter++ % 3 == 2) { %>
+              </tr>
+            <% } %>
+          <% } %>
+        </table>
+      <% } %>
+      <% if(error !== null) %>
+      <p>
+        <%= error %>
+      </p>
+    </fieldset>
+  </body>
+</html>
