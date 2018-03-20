@@ -17,7 +17,6 @@
     </title>
   </head>
   <body>
-    <fieldset>
       <form action = "/" method = "post">
         <input name = "ingredient" type = "text" placeholder = "Enter Ingredient(s)" required>
         <input type = "submit" class = "button" value = "Submit">
@@ -30,9 +29,9 @@
               <tr>
                 <% } %>
                 <td style = "vertical-align:10%">
-                  <p class = "text">
+                  <p class = "text"> <strong>
                     <%= recipe.title %>
-                  </p>
+                  </p> </strong>
                   <a href = "<%= recipe.f2f_url %>" target = "_blank">
                     <img src = "<%= recipe.image_url %>" class = "img" >
                   </a>
@@ -40,13 +39,13 @@
                 <% if(counter++ % 3 == 2) { %>
                   </tr>
                 <% } %>
-            <% } %>
+          <% } %>
         </table>
       <% } %>
-    <% if(error !== null) %>
-      <p>
-        <%= error %>
-      </p>
-    </fieldset>
+      <% if(error !== null) { %>
+        <p>
+          <%= error %>
+        </p>
+      <% } %>
   </body>
-</html>
+  </html>

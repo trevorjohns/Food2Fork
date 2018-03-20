@@ -1,5 +1,5 @@
 // intialize food2fork api key
-const API_KEY = 'f0e79516a7031030448c2c01dd68c95c'
+const API_KEY = 'f0e79516a7031030448c2c01dd68c95c';
 
 // javascript initialize modules
 const express = require('express');
@@ -50,9 +50,10 @@ app.post('/',  (postRequest, postResponse) => {
 // loop through all possible urls
 for(url of directory) {
   // handle get request
-  app.get(url, (request, response) => {
+  app.get(url, (getRequest, getResponse) => {
   // upon loading, send blank object
-  response.render('index', {page: null, error: null});
+  console.log("shit: " + getRequest.query.ingredients);
+  getResponse.render('index', {page: null, error: null});
   });
 }
 
