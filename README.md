@@ -8,11 +8,6 @@ Creator:
 Date Created:
   March 19th, 2018
 
-Description:
-  The following is a Node.JS program that allows the user to enter a song into the text field on the page.
-  Once submitted the user can view the song chords/charting in both an interactive draggable menu along
-  with a standard text version below.
-
 Version of Node.js:
   v9.5.0
 
