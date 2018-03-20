@@ -52,7 +52,6 @@ for(url of directory) {
   // handle get request
   app.get(url, (getRequest, getResponse) => {
   // upon loading, send blank object
-  console.log("shit: " + getRequest.query.ingredients);
   getResponse.render('index', {page: null, error: null});
   });
 }
